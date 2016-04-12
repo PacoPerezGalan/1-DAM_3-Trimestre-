@@ -91,7 +91,7 @@ public class Datos extends JFrame {
 				for (int i=0;i<dtm.getColumnCount();i++){
 					valor[i]=dtm.getColumnName(i);
 				}
-				new valorsFila(dtm,valor).setVisible(true);
+				new AfegirFila(dtm,valor).setVisible(true);
 				
 				/*valor=new Object[dtm.getColumnCount()];
 				for (int i=0;i<dtm.getColumnCount();i++){

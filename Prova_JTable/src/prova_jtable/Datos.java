@@ -10,6 +10,9 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.EventListenerList;
 import javax.swing.table.DefaultTableModel;
+
+import conexio_ddbb.conexio;
+
 import javax.swing.JTable;
 
 import java.awt.FlowLayout;
@@ -28,7 +31,6 @@ public class Datos extends JFrame {
 	private JPanel panelDeContingut;
 	private JTable dades;
 	Object[] valor;
-
 	/**
 	 * Launch the application.
 	 */
@@ -74,6 +76,18 @@ public class Datos extends JFrame {
 		panelDeContingut.setLayout(new BorderLayout(0, 0));
 		JScrollPane scrollPane= new JScrollPane(dades);
 		panelDeContingut.add(scrollPane);
+		
+		JButton btnConsultarBBDD = new JButton("ConsultarBBDD");
+		panelDeContingut.add(btnConsultarBBDD, BorderLayout.WEST);
+		
+		btnConsultarBBDD.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new conexio(dtm);
+			}
+		});
 		
 		JButton btnAfegirFila = new JButton("Afegir Fila");
 		panelDeContingut.add(btnAfegirFila, BorderLayout.NORTH);
